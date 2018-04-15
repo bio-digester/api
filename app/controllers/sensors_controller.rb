@@ -1,5 +1,5 @@
 class SensorsController < ApplicationController
-  before_action :set_sensor, only: [:show]
+  before_action :set_sensor, only: [:show, :update, :destroy]
 
   # GET /sensors
   def index
@@ -16,6 +16,18 @@ class SensorsController < ApplicationController
   # GET /sensors/:id
   def show
     json_response(@sensor)
+  end
+
+  # PUT /sensors/:id
+  def update
+    @sensor.update(sensor_params)
+    head :no_content
+  end
+
+  # DELETE /sensors/:id
+  def destroy
+    @sensor.destroy
+    head :no_content
   end
 
   private

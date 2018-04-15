@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_04_15_155159) do
 
-  create_table "dados", force: :cascade do |t|
-    t.datetime "data_medicao"
-    t.string "value"
-    t.integer "sensor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["sensor_id"], name: "index_dados_on_sensor_id"
-  end
-
   create_table "data_collects", force: :cascade do |t|
     t.datetime "data_measure"
     t.string "value"
